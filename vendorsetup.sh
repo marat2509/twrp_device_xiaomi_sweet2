@@ -34,6 +34,11 @@ if [ -z "$1" -a -z "$FOX_BUILD_DEVICE" ]; then
 fi
 
 if { [ -z "$1" ] || [ "$1" = "$FDEVICE" ]; } && { [ -z "$FOX_BUILD_DEVICE" ] || [ "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; }; then
+	# initial setup
+ 	export ALLOW_MISSING_DEPENDENCIES=true
+	export FOX_BUILD_DEVICE="$FDEVICE"
+ 	export LC_ALL="C"
+
 	# add more builtins
 	export FOX_USE_TAR_BINARY=1
 	export FOX_USE_SED_BINARY=1
