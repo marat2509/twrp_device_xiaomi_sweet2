@@ -33,8 +33,7 @@ if [ -z "$1" -a -z "$FOX_BUILD_DEVICE" ]; then
    fox_get_target_device
 fi
 
-if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
-	
+if { [ -z "$1" ] || [ "$1" = "$FDEVICE" ]; } && { [ -z "$FOX_BUILD_DEVICE" ] || [ "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; }; then
 	# add more builtins
 	export FOX_USE_TAR_BINARY=1
 	export FOX_USE_SED_BINARY=1
@@ -73,4 +72,3 @@ else
 		echo "I: This script requires bash. Not processing the $FDEVICE $(basename $0)"
 	fi
 fi
-#
