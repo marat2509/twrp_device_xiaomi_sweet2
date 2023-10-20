@@ -54,6 +54,8 @@ if { [ -z "$1" ] || [ "$1" = "$FDEVICE" ]; } && { [ -z "$FOX_BUILD_DEVICE" ] || 
 	# screen info
 	export OF_SCREEN_H=2400
 	export OF_STATUS_H=93
+	export OF_STATUS_INDENT_LEFT=48
+	export OF_STATUS_INDENT_RIGHT=48
 	export OF_CLOCK_POS=1
 
 	# always enabled navbar
