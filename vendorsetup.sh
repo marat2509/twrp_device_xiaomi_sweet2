@@ -40,7 +40,7 @@ if { [ -z "$1" ] || [ "$1" = "$FDEVICE" ]; } && { [ -z "$FOX_BUILD_DEVICE" ] || 
  	export LC_ALL="C"
 
 	# apply patches
-	git apply "$(pwd)/device/xiaomi/$FDEVICE/source.patch" 2>/dev/null || true
+	git apply "$(pwd)/device/xiaomi/$FDEVICE/patches.diff" 2>/dev/null || true
 
 	# add more builtins
 	export FOX_USE_TAR_BINARY=1
