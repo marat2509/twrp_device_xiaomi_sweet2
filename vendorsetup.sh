@@ -40,10 +40,10 @@ if { [ -z "$1" ] || [ "$1" = "$FDEVICE" ]; } && { [ -z "$FOX_BUILD_DEVICE" ] || 
 	export FOX_BUILD_DEVICE="$FDEVICE"
  	export LC_ALL="C"
 
-	# check if the patches directory exists and contains .diff files
-	if [ -d "$TREE_PATH/patches" ] && [ -n "$(ls -A $TREE_PATH/patches/*.diff 2>/dev/null)" ]; then
+	# check if the patches directory contains .diff files
+	if [ -n "$(ls -A $TREE_PATH/patches/*.diff 2>/dev/null)" ]; then
 		# apply patches
-		for patch in "$TREE_PATH/patches/*.diff"
+		for patch in $TREE_PATH/patches/*.diff
 		do
 			if [ $(git apply --check "$patch" 2>/dev/null; echo $?) -eq 0 ]; then
 				git apply "$patch"
