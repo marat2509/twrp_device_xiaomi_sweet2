@@ -63,6 +63,10 @@ if { [ -z "$1" ] || [ "$1" = "$FDEVICE" ]; } && { [ -z "$FOX_BUILD_DEVICE" ] || 
 	export FOX_USE_SED_BINARY=1
 	export FOX_USE_XZ_UTILS=1
 	export FOX_USE_NANO_EDITOR=1
+        export OF_ENABLE_LPTOOLS=1
+
+        # enable app manager
+	FOX_ENABLE_APP_MANAGER=1
 
 	# disable led settings
 	export OF_USE_GREEN_LED=0
@@ -83,8 +87,14 @@ if { [ -z "$1" ] || [ "$1" = "$FDEVICE" ]; } && { [ -z "$FOX_BUILD_DEVICE" ] || 
 	# prevent recovery overwriting
 	export OF_PATCH_AVB20=1
 
-	# Magisk 26.3
-	export FOX_USE_SPECIFIC_MAGISK_ZIP="$(pwd)/vendor/recovery/Magisk.zip"
+	# Magisk
+        MAGISK_VER=$(curl -fSsl https://api.github.com/repos/topjohnwu/Magisk/releases/latest | grep tag_name | sed 's/,//g' | awk '{print $2}' | sed 's/["v]//g')
+	MAGISK_ZIP="$(pwd)/vendor/recovery/FoxFiles/Magisk-v$MAGISK_VER.zip"
+        if [ ! -e $MAGISK_ZIP ]; then
+	    echo "I: Downloading Magisk v$MAGISK_VER"
+            wget -q -O "$MAGISK_ZIP" "https://github.com/topjohnwu/Magisk/releases/download/v$MAGISK_VER/Magisk-v$MAGISK_VER.apk"
+        fi;
+	export FOX_USE_SPECIFIC_MAGISK_ZIP=$MAGISK_ZIP
 
 	# let's see what are our build VARs
 	if [ -n "$FOX_BUILD_LOG_FILE" -a -f "$FOX_BUILD_LOG_FILE" ]; then
