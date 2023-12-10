@@ -15,7 +15,7 @@
 #
 
 # Release name
-PRODUCT_RELEASE_NAME := sweet
+PRODUCT_RELEASE_NAME := sweet_k6a
 DEVICE_PATH := device/xiaomi/sweet_k6a
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
