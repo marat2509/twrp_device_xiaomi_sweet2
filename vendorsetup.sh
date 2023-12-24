@@ -40,16 +40,16 @@ if { [ -z "$1" ] || [ "$1" = "$FDEVICE" ]; } && { [ -z "$FOX_BUILD_DEVICE" ] || 
 	export FOX_BUILD_DEVICE="$FDEVICE"
  	export LC_ALL="C"
 
-
 	# add more builtins
 	export FOX_USE_TAR_BINARY=1
 	export FOX_USE_SED_BINARY=1
 	export FOX_USE_XZ_UTILS=1
 	export FOX_USE_NANO_EDITOR=1
+ 	export FOX_USE_BASH_SHELL=1
         export OF_ENABLE_LPTOOLS=1
 
         # enable app manager
-	FOX_ENABLE_APP_MANAGER=1
+	export FOX_ENABLE_APP_MANAGER=1
 
 	# disable led settings
 	export OF_USE_GREEN_LED=0
