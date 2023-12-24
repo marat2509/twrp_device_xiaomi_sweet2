@@ -40,23 +40,6 @@ if { [ -z "$1" ] || [ "$1" = "$FDEVICE" ]; } && { [ -z "$FOX_BUILD_DEVICE" ] || 
 	export FOX_BUILD_DEVICE="$FDEVICE"
  	export LC_ALL="C"
 
-	# check if the patches directory contains .diff files
-	if [ -n "$(ls -A $TREE_PATH/patches/*.diff 2>/dev/null)" ]; then
-		# apply patches
-		for patch in $TREE_PATH/patches/*.diff
-		do
-			if [ $(git apply --check "$patch" 2>/dev/null; echo $?) -eq 0 ]; then
-				git apply "$patch"
-				echo "The patch $(basename $patch) has been successfully applied"
-			else
-				echo "The patch $(basename $patch) has already been applied or it causes a conflict"
-			fi
-		done
-	else
-		echo "The patches directory does not exist or does not contain .diff files"
-	fi
-
-
 
 	# add more builtins
 	export FOX_USE_TAR_BINARY=1
