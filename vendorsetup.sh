@@ -84,7 +84,7 @@ if { [ -z "$1" ] || [ "$1" = "$FDEVICE" ]; } && { [ -z "$FOX_BUILD_DEVICE" ] || 
 	export FOX_USE_SPECIFIC_MAGISK_ZIP=$MAGISK_ZIP
 
 	# generate filename
-        export FOX_OUT_NAME="OrangeFox-sweet_k6a-${date +%d%m%Y}"
+        export FOX_OUT_NAME="OrangeFox-Unofficial-sweet_k6a"
 
 	# let's see what are our build VARs
 	if [ -n "$FOX_BUILD_LOG_FILE" -a -f "$FOX_BUILD_LOG_FILE" ]; then
