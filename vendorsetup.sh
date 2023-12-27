@@ -83,8 +83,11 @@ if { [ -z "$1" ] || [ "$1" = "$FDEVICE" ]; } && { [ -z "$FOX_BUILD_DEVICE" ] || 
         fi;
 	export FOX_USE_SPECIFIC_MAGISK_ZIP=$MAGISK_ZIP
 
-	# generate filename
-        export FOX_OUT_NAME="OrangeFox-Unofficial-sweet_k6a"
+	# delete AromaFM
+	export FOX_DELETE_AROMAFM=1
+
+	# build type
+	export FOX_BUILD_TYPE=Stable
 
 	# let's see what are our build VARs
 	if [ -n "$FOX_BUILD_LOG_FILE" -a -f "$FOX_BUILD_LOG_FILE" ]; then
