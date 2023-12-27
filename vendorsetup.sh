@@ -71,8 +71,8 @@ if { [ -z "$1" ] || [ "$1" = "$FDEVICE" ]; } && { [ -z "$FOX_BUILD_DEVICE" ] || 
 	export OF_PATCH_AVB20=1
 
         # compability fixes
-        export FOX_TARGET_DEVICES="sweet_k6a,sweet_global2,sweet"
-        export TARGET_DEVICE_ALT="sweet_k6a,sweet_global2,sweet"
+        export FOX_TARGET_DEVICES="sweet_k6a,sweet"
+        export TARGET_DEVICE_ALT=$FOX_TARGET_DEVICES
 
 	# Magisk
         MAGISK_VER=$(curl -fSsl https://api.github.com/repos/topjohnwu/Magisk/releases/latest | grep tag_name | sed 's/,//g' | awk '{print $2}' | sed 's/["v]//g')
