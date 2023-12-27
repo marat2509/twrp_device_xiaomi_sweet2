@@ -83,11 +83,16 @@ if { [ -z "$1" ] || [ "$1" = "$FDEVICE" ]; } && { [ -z "$FOX_BUILD_DEVICE" ] || 
         fi;
 	export FOX_USE_SPECIFIC_MAGISK_ZIP=$MAGISK_ZIP
 
-	# delete AromaFM
+	# delete unneeded addons
 	export FOX_DELETE_AROMAFM=1
+        export FOX_DELETE_INITD_ADDON=1
 
-	# build type
+	# version meta
 	export FOX_BUILD_TYPE=Stable
+        export FOX_VERSION=Release
+
+        # prevent settings reset
+	export FOX_RESET_SETTINGS=0
 
 	# let's see what are our build VARs
 	if [ -n "$FOX_BUILD_LOG_FILE" -a -f "$FOX_BUILD_LOG_FILE" ]; then
