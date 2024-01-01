@@ -46,9 +46,9 @@ if { [ -z "$1" ] || [ "$1" = "$FDEVICE" ]; } && { [ -z "$FOX_BUILD_DEVICE" ] || 
 	export FOX_USE_XZ_UTILS=1
 	export FOX_USE_NANO_EDITOR=1
  	export FOX_USE_BASH_SHELL=1
-        export OF_ENABLE_LPTOOLS=1
+    export OF_ENABLE_LPTOOLS=1
 
-        # enable app manager
+    # enable app manager
 	export FOX_ENABLE_APP_MANAGER=1
 
 	# disable led settings
@@ -85,13 +85,13 @@ if { [ -z "$1" ] || [ "$1" = "$FDEVICE" ]; } && { [ -z "$FOX_BUILD_DEVICE" ] || 
 
 	# delete unneeded addons
 	export FOX_DELETE_AROMAFM=1
-        export FOX_DELETE_INITD_ADDON=1
+    export FOX_DELETE_INITD_ADDON=1
 
 	# version meta
 	export FOX_BUILD_TYPE=Stable
-        export FOX_VERSION=Official
+    export FOX_VERSION=Official
 
-        # prevent settings reset
+    # prevent settings reset
 	export FOX_RESET_SETTINGS=0
 
 	# let's see what are our build VARs
