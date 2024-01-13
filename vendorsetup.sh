@@ -40,7 +40,7 @@ if { [ -z "$1" ] || [ "$1" = "$FDEVICE" ]; } && { [ -z "$FOX_BUILD_DEVICE" ] || 
     export FOX_BUILD_DEVICE="$FDEVICE"
     export LC_ALL="C"
 
-	# add more builtins
+    # add more builtins
     export FOX_USE_TAR_BINARY=1
     export FOX_USE_SED_BINARY=1
     export FOX_USE_XZ_UTILS=1
@@ -89,7 +89,7 @@ if { [ -z "$1" ] || [ "$1" = "$FDEVICE" ]; } && { [ -z "$FOX_BUILD_DEVICE" ] || 
 
     # version meta
     export FOX_BUILD_TYPE=Stable
-    export FOX_VERSION=Official
+    export FOX_VERSION=$(git -C $TREE_PATH rev-parse --short origin/HEAD)
 
     # prevent settings reset
     export FOX_RESET_SETTINGS=0
