@@ -95,7 +95,7 @@ if { [ -z "$1" ] || [ "$1" = "$FDEVICE" ]; } && { [ -z "$FOX_BUILD_DEVICE" ] || 
     export FOX_RESET_SETTINGS=0
 
     # extras
-    export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1
+    export FOX_SETTINGS_ROOT_DIRECTORY="/persist/Fox"
 
     # let's see what are our build VARs
     if [ -n "$FOX_BUILD_LOG_FILE" -a -f "$FOX_BUILD_LOG_FILE" ]; then
