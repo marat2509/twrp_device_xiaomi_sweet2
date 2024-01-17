@@ -30,7 +30,9 @@ $(call inherit-product, device/xiaomi/sweet_k6a/device.mk)
 PRODUCT_DEVICE := sweet_k6a
 PRODUCT_NAME := twrp_sweet_k6a
 
+PRODUCT_SYSTEM_NAME := sweet_k6a
+PRODUCT_SYSTEM_DEVICE := sweet_k6a
+
 PRODUCT_BRAND := Redmi
 PRODUCT_MODEL := Redmi Note 12 Pro 4G
 PRODUCT_MANUFACTURER := Xiaomi
-

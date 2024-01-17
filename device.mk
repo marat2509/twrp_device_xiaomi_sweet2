@@ -28,7 +28,6 @@ PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.0-impl-mock
 
 PRODUCT_SHIPPING_API_LEVEL := 30
-
 TARGET_COPY_OUT_VENDOR := vendor
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
