@@ -89,7 +89,7 @@ if { [ -z "$1" ] || [ "$1" = "$FDEVICE" ]; } && { [ -z "$FOX_BUILD_DEVICE" ] || 
 
     # version meta
     export FOX_BUILD_TYPE=Stable
-    export FOX_VERSION=$(git -C $TREE_PATH rev-parse --short origin/HEAD)
+    export FOX_VERSION=$(git -C $TREE_PATH rev-parse --short origin/$(git -C $TREE_PATH rev-parse --abbrev-ref HEAD))
 
     # prevent settings reset
     export FOX_RESET_SETTINGS=disabled
