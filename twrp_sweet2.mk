@@ -15,8 +15,8 @@
 #
 
 # Release name
-PRODUCT_RELEASE_NAME := sweet_k6a
-DEVICE_PATH := device/xiaomi/sweet_k6a
+PRODUCT_RELEASE_NAME := sweet2
+DEVICE_PATH := device/xiaomi/sweet2
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 
@@ -24,11 +24,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 $(call inherit-product, vendor/twrp/config/common.mk)
 
 # Inherit device configuration
-$(call inherit-product, device/xiaomi/sweet_k6a/device.mk)
+$(call inherit-product, device/xiaomi/sweet2/device.mk)
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := sweet_k6a
-PRODUCT_NAME := twrp_sweet_k6a
+PRODUCT_DEVICE := sweet2
+PRODUCT_NAME := twrp_sweet2
 
 PRODUCT_BRAND := Redmi
 PRODUCT_MODEL := Redmi Note 12 Pro 4G
