@@ -17,7 +17,7 @@
 #
 # 	Please maintain this if you use this script or any part of it
 #
-FDEVICE="sweet_k6a"
+FDEVICE="sweet2"
 TREE_PATH="$(realpath "$(dirname "${BASH_SOURCE[0]}")")"
 
 fox_get_target_device() {
@@ -71,7 +71,7 @@ if { [ -z "$1" ] || [ "$1" = "$FDEVICE" ]; } && { [ -z "$FOX_BUILD_DEVICE" ] || 
     export OF_PATCH_AVB20=1
 
     # compability fixes
-    export FOX_TARGET_DEVICES="sweet_k6a,sweet"
+    export FOX_TARGET_DEVICES="sweet_k6a,sweet,sweet2,sweet2_global"
     export TARGET_DEVICE_ALT=$FOX_TARGET_DEVICES
 
     # Magisk
