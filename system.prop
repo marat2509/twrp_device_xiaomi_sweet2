@@ -1,5 +1,5 @@
 ro.product.vendor.marketname=Redmi Note 12 Pro 4G
-ro.product.board=sweet_k6a
+ro.product.board=sweet2
 ro.board.platform=sm6150
 sys.usb.controller=a600000.dwc3
 sys.usb.rndis.func.name=rndis_bam
